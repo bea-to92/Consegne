@@ -1,0 +1,33 @@
+import datetime
+def assistente_virtuale(comando):
+    if comando == "Qual è la data di oggi?":
+        oggi = datetime.datetoday()  
+        risposta = "La data di oggi è " + oggi.strftime("%d/%m/%Y")
+    elif comando == "Che ore sono?":
+        ora_attuale = datetime.datetime.now().time()  
+        risposta = "L'ora attuale è " + ora_attuale.strftime("%H:%M")
+    elif comando == "Come ti chiami?":
+        risposta = "Mi chiamo Assistente Virtuale"
+    else:
+        risposta = "Non ho capito la tua domanda."  
+    return risposta
+while True
+    comando_utente = input("Cosa vuoi sapere? ")
+    if comando_utente.lower() == "esci":
+        print("Arrivederci!")
+        break
+    else:
+        print(assistente_virtuale(comando_utente)) 
+
+
+Il codice riportato riproduce un assistente virtuale al quale, attraverso comandi stabiliti, possono essere richieste alcune informazioni come ad esempio l'ora o la data.
+Il codice parte dalla definizione di una funzione def assistente_virtuale la quale prende un parametro (comando). Da li in poi vengono quindi stabiliti i comandi attribuiti all'utente per attivare l'assistente virtuale, il quale in base alle domande poste risponderà così come stabilito (ad es se l'utente chiederà "Qual è la data di oggi?" l'assistente virtuale risponderà "La data di oggi è …" calcolando esattamente la data corrente).
+Il codice è costruito in maniera tale da rispondere solo alle domande previste dal programmatore, difatti se l'utente dovesse porre una domanda non previste l'assistente virtuale dirà di non aver capito la domanda. 
+
+A livello logico il codice è costruito correttamente in quanto in base ai comandi stabiliti l'assistente virtuale risponde in maniera corretta. Il comando viene specificatamente individuato così come vengono individuate specificatamente le risposte. Il codice è strutturato nel senso che: se(if) il comando è "...." l'assistente virtuale risponda "...", e se il comando non dovesse rientrare tra quelli previsti (else) l'assistente virtuale risponderà "Non ho capito la tua domanda".
+
+Per quanto concerne altre casistiche non gestite dal codice sicuramente si sarebbero potuti implementare i comandi ad esempio permettendo all'utente di accedere ad un menù, quindi ad una lista di comandi numerati, attribuendo così allo stesso di accedere ad una gamma di possibilità di azione dell'assistente virtuale. 
+
+Per quanto concerne eventuali errori di sintassi: 
+1. aggiunta dei ":" a while True 
+2. "datetime.datetoday" la funzione corretta è datetime.date.today
